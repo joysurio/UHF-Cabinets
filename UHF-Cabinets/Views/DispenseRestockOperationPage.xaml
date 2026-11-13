@@ -1,0 +1,80 @@
+<Page x:Class="UHFCabinets.Views.DispenseRestockOperationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Background="{StaticResource WindowBackgroundBrush}">
+    <Grid>
+        <Rectangle Fill="{StaticResource PageAmbientGlowBrush}" IsHitTestVisible="False"/>
+        <Rectangle Fill="{StaticResource PageAmbientGlowBrushSecondary}" IsHitTestVisible="False"/>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="24,24">
+            <StackPanel MaxWidth="720" MinWidth="280" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                    <Border Width="4" Height="28" CornerRadius="2" Background="{StaticResource PrimaryBrush}" VerticalAlignment="Center" Margin="0,0,12,0"/>
+                    <TextBlock Style="{StaticResource PageTitleText}" Text="Dispense / Restock" VerticalAlignment="Center"/>
+                </StackPanel>
+                <Border Style="{StaticResource ElevatedCard}" Padding="0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="4"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Border Grid.Row="0" Background="{StaticResource ChromeAccentLineBrush}" CornerRadius="16,16,0,0"/>
+                        <StackPanel Grid.Row="1" Margin="28,26,28,28">
+                            <TextBlock x:Name="PhaseTitle"
+                                       FontSize="21"
+                                       FontWeight="SemiBold"
+                                       Foreground="{StaticResource TextBrush}"
+                                       Margin="0,0,0,10"/>
+                            <TextBlock x:Name="PhaseDetail"
+                                       Style="{StaticResource PageSubtitleText}"
+                                       FontSize="15"
+                                       Margin="0,0,0,22"/>
+                            <Border x:Name="TestPanel"
+                                    Visibility="Collapsed"
+                                    Background="#F4F8FC"
+                                    BorderBrush="{StaticResource BorderLightBrush}"
+                                    BorderThickness="1"
+                                    CornerRadius="14"
+                                    Padding="22"
+                                    Margin="0,0,0,18">
+                                <StackPanel>
+                                    <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+                                        <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE7C3;" FontSize="18" Foreground="{StaticResource PrimaryBrush}" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                                        <TextBlock Text="Test mode"
+                                                   FontWeight="SemiBold"
+                                                   FontSize="14"
+                                                   Foreground="{StaticResource PrimaryDarkBrush}"
+                                                   VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                    <Button Content="Simulate: Door opened"
+                                            HorizontalAlignment="Stretch"
+                                            Margin="0,0,0,8"
+                                            Style="{StaticResource GhostButton}"
+                                            Click="OnSimulateDoorOpened"/>
+                                    <Button Content="Simulate: Door closed"
+                                            HorizontalAlignment="Stretch"
+                                            Margin="0,0,0,12"
+                                            Click="OnSimulateDoorClosed"/>
+                                    <TextBlock Text="RFID list (one tag per line)" FontSize="13" Style="{StaticResource FormFieldLabel}" Margin="0,8,0,0"/>
+                                    <TextBox x:Name="RfidLinesBox"
+                                             AcceptsReturn="True"
+                                             TextWrapping="Wrap"
+                                             MinHeight="140"
+                                             VerticalScrollBarVisibility="Auto"/>
+                                    <Button Content="Simulate RFID read"
+                                            HorizontalAlignment="Stretch"
+                                            Margin="0,12,0,0"
+                                            Click="OnSimulateRfidRead"/>
+                                </StackPanel>
+                            </Border>
+                            <Button Content="Cancel operation"
+                                    Style="{StaticResource GhostButton}"
+                                    HorizontalAlignment="Center"
+                                    MinWidth="200"
+                                    Click="OnCancel"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

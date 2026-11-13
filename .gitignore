@@ -1,0 +1,36 @@
+## Build artifacts
+bin/
+obj/
+
+## Visual Studio / Rider
+.vs/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## .NET tool/package caches
+*.nuget.g.props
+*.nuget.g.targets
+
+## Local DBs / runtime state (SQLite)
+**/uhf_gateway.db
+**/uhfcabinets.db
+**/uhfcabinets_device.db
+**/uhf_gateway.sqlite
+
+## Local secrets (override cabinet API key, TLS dev flags, etc.)
+appsettings.secrets.json
+**/appsettings.*.local.json
+
+## Output config copies (uncomment only if you want to ignore shipped appsettings)
+# appsettings.json
+
+## Logs
+*.log
+
+## OS files
+Thumbs.db
+Desktop.ini
+

@@ -1,0 +1,10 @@
+{
+  "items": [
+    { "rfid": "E2000017221101441890A1B2", "producto": "Example product A" },
+    { "rfid": "E2000017221101441890A1B3", "producto": "Example product B" }
+  ],
+  "lastScanRfids": [
+    "E2000017221101441890A1B2",
+    "E2000017221101441890A1B3"
+  ]
+}
